@@ -25,6 +25,7 @@ my %expected_lengths = (
 
 my ($seq, $seqio);
 
+# keep the SKIP block to deal with intermittent fails
 SKIP: {
     eval {$seq = $gb->get_Seq_by_id('YNB3_YEAST');};
     skip "Couldn't connect to SwissProt with Bio::DB::SwissProt.pm. Skipping those tests", 14 if $@;
